@@ -95,7 +95,7 @@ Check : ${logClaim}
         } catch (error) {
             console.log(error)
             twisters.put(address, {
-                active: true,
+                active: false,
                 text: `
 Address : ${address}
 Status : Error processing account, please check logs for details.
