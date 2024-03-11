@@ -95,14 +95,14 @@ Check : ${logClaim}
         } catch (error) {
             console.log(error)
             twisters.put(address, {
-                active: false,
+                active: true,
                 text: `
 Address : ${address}
 Status : Error processing account, please check logs for details.
 `,
             });
 
-            twisters.put(accountId, {
+            twisters.put(address, {
                 removed: true,
             });
             await checkAndUpdate();
