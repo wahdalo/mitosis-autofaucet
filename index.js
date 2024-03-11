@@ -91,7 +91,7 @@ Address : ${address}
 Check : ${logClaim}
 `,
                 });
-                setTimeout(checkAndUpdate, 10000);
+                setTimeout(checkAndUpdate, 60000);
         } catch (error) {
             console.log(error)
             twisters.put(address, {
