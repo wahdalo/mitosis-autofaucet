@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 import { Twisters } from "twisters";
 const twisters = new Twisters();
 import fs from "fs";
@@ -55,6 +55,8 @@ const processAccount = async (address) => {
     const checkAndUpdate = async () => {
         try {
             const eligGabang = await cekEligibity(address);
+            const getFaucetnjerr = await getFaucet(address);
+            const logClaim = await getFaucetnjerr.message
             if (eligGabang.status === 'ELIGIBLE'){
                 twisters.put(address, {
                     text: `
@@ -86,10 +88,10 @@ Check : ${logClaim}
                 twisters.put(address, {
                     text: `
 Address : ${address}
-Check : Sudah claim hari ini!
+Check : ${logClaim}
 `,
                 });
-                setTimeout(mineAndUpdate, 500);
+                setTimeout(checkAndUpdate, 10000);
         } catch (error) {
             console.log(error)
             twisters.put(address, {
@@ -103,6 +105,7 @@ Status : Error processing account, please check logs for details.
             twisters.put(accountId, {
                 removed: true,
             });
+            await checkAndUpdate();
             return;
         }
     }
