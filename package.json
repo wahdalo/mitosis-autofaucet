@@ -1,0 +1,28 @@
+{
+  "name": "mitosis-autofaucet",
+  "version": "1.0.0",
+  "description": "Mitosis auto claim daily faucet",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wahdalo/mitosis-autofaucet"
+  },
+  "keywords": [
+    "mitosis"
+  ],
+  "author": "wahdalo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wahdalo/mitosis-autofaucet/issues"
+  },
+  "homepage": "https://github.com/wahdalo/mitosis-autofaucet#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "node-fetch": "^3.3.2",
+    "twisters": "^1.1.0"
+  }
+}
